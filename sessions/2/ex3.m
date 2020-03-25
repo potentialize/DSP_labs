@@ -1,0 +1,14 @@
+[x, fs] = audioread('../audio files/vowel_a.wav');
+soundsc(x, fs);
+plot([0:length(x)-1]/fs, x);
+phi = [0:2:fs/2]/fs;
+X=dtft(x, phi);
+figure;
+plot(phi*fs, 20*log10(abs(X)));
+figure;
+plot([0:length(x)-1]/fs, x);
+X2=fft(x);
+norm(X-X2(1:2001));
+X=fft([x; zeros(6000, 1)]);
+figure;
+plot([0:length(X)-1]/length(X)*fs, 20*log10(abs(X)));
