@@ -5,7 +5,7 @@ fftwLibPath = $$HOME/usr/lib
 fftwIncludePath = $$HOME/usr/include
 
 fastconvolution: $(fastconvolutionPath)
-	gcc $(fastconvolutionPath) -lm -lfftw3 -L$(fftwLibPath) -I$(fftwIncludePath) -o fastconvolution.out
+	g++ $(fastconvolutionPath) -lm -lfftw3 -L$(fftwLibPath) -I$(fftwIncludePath) -o fastconvolution.out
 
 .PHONY: clean-data
 clean-data:
